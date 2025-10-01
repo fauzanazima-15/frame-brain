@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <img src="baju.jpg" alt="baju trend" class="img-content">
+        </div>
+        <div class="sign-in-container">
+            <h1 class="judul">LOGIN AKUN</h1>
+            <!--tampilkan signin-->
+            <form action="member.php" method="POST">
+                <input type="text" class="placeholder" name="username" placeholder="Username" required> <br>
+                <input type="password" class="placeholder" name="password" placeholder="Password" required>
+                <div class="group-button">
+                    <button type="button" onclick="window.location.href='sembako.html'">Login</button>
+                    <button type="button" class="button" onclick="toggleForm()">SignUp</button>
+                </div>
+            </form>
+        </div>
+        <div class="sign-up-container" style="display:none">
+            <!--tampilkan signup-->
+            <h1 class="judul">REGISTER</h1>
+            <form action="registrer.php" method="POST">
+                <input type="text" class="placeholder" name="username" placeholder="Username" required> <br>
+                <input type="password" class="placeholder" name="password" placeholder="Password" required> <br>
+                <input type="password" class="placeholder" name="confirm_password" placeholder="Confirm password" required>
+                <div class="group-button">
+                    <button type="submit">SignUp</button>
+                    <button type="button" class="button" onclick="toggleForm()">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function toggleForm() {
+            const signInForm = document.querySelector('.sign-in-container');
+            const signUpForm = document.querySelector('.sign-up-container');
+            if (signInForm.style.display === "none") {
+                signInForm.style.display = "block";
+                signUpForm.style.display = "none";
+            } else {
+                signInForm.style.display = "none";
+                signUpForm.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
